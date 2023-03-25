@@ -58,6 +58,8 @@ func main() {
 	// open stdin as a scanner. That makes it super easy
 	// to deal with line-delimited input
 	sc := bufio.NewScanner(os.Stdin)
+	buf := make([]byte, 0, 64*1024)
+	sc.Buffer(buf, 1024*1024)
 	for sc.Scan() {
 		// send each line (a domain) on the jobs channel
 		jobs <- sc.Text()
