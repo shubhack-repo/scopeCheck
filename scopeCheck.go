@@ -75,7 +75,6 @@ func main() {
 		fmt.Fprintf(os.Stderr, "failed to read input: %s\n", err)
 	}
 
-	// wait for the workers to finish doing their thing
 	wg.Wait()
 
 }
