@@ -31,7 +31,7 @@ func main() {
 				if err != nil {
 					continue
 				}
-				if strings.HasSuffix(url.Hostname(),domain) == true {
+				if strings.HasSuffix(url.Hostname(),"."+domain) == true || url.Hostname() == domain {
 					fmt.Println(iurl)
 				}
 			}
